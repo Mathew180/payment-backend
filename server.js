@@ -33,9 +33,11 @@ app.post("/checkout", async(req,res) => {
                 user_id:"3434"
             },
         });
-        res.status(200).json({
-            charge:charge,
-        })
+        // res.status(200).json({
+        //     charge:charge.hosted_url,
+        // })
+
+        res.redirect(charge.hosted_url)
 
     }catch(error){
         res.status(500).json({

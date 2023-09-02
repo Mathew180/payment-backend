@@ -24,8 +24,16 @@ router.post("/signup", async (req, res) => {
         })
         // 
         const users = await newUser.save();
-        
-        res.status(200).json({ message: 'Signup successful' })
+         // Check if the response status is 200 (or any other successful status code)
+    //     if (res.status === 200) {
+    //     // Redirect the user to a certain page upon successful signup
+    //     res.redirect('http://localhost:5500/login/index.htm');
+    //   } else {
+    //     // Handle unsuccessful signup (e.g., display an error message)
+    //     res.status(response.status).send('Signup failed');
+    //   }
+    res.redirect('https://crypto360.netlify.app/login/index.htm');
+       //res.status(200).json({ message: 'Signup successful' })
         //console.log(users)
     }
        catch(error){
@@ -77,7 +85,15 @@ router.post("/login",  async (req, res) => {
  // const token = await jwt.sign({_id: user._id}, process.env.ACCESS_TOKEN_SECRET)
  // res.status(200).json({token:token,
  // _id: user._id
- res.status(200).json("sucessfully logged")
+ //res.status(200).json("sucessfully logged")
+ res.redirect('https://crypto360.netlify.app/mining/index.html');
+       // Check if the response status is 200 (or any other successful status code)
+    //     if (res.status == 200) {
+    //     // Redirect the user to a certain page upon successful signup
+    //     //res.redirect('http://localhost:5500/login/index.htm');
+    //     // alert("sucessfully logged")
+    //     res.status(200).json("sucessfully logged")
+    //   }return
  // })
   
     } catch(err){
