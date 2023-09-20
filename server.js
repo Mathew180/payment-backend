@@ -2,6 +2,7 @@
 require('./config/db');
 
 const express = require("express");
+const cors = require("cors")
 const authRoute = require('./routes/auth');
 const app = express();
 const PORT = 3000;
@@ -9,6 +10,13 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 app.use("/api/auth", authRoute);
+
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200 // For legacy browser support
+}
+
+app.use(cors(corsOptions));
 
 const coinbase = require("coinbase-commerce-node");
 const Client = coinbase.Client;
@@ -33,11 +41,11 @@ app.post("/checkout", async(req,res) => {
                 user_id:"3434"
             },
         });
-        // res.status(200).json({
-        //     charge:charge.hosted_url,
-        // })
+        res.status(200).json({
+            charge:charge,
+        })
 
-        res.redirect(charge.hosted_url)
+        // res.redirect(charge.hosted_url)
 
     }catch(error){
         res.status(500).json({
