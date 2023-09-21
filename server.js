@@ -48,7 +48,7 @@ app.post("/checkout", async(req,res) => {
         // res.redirect(charge.hosted_url)
 
     }catch(error){
-        res.status(500).json({
+        res.status(400).json({
             error:error,
         })
     }
