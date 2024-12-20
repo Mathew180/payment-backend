@@ -32,7 +32,7 @@ router.post("/signup", async (req, res) => {
     //     // Handle unsuccessful signup (e.g., display an error message)
     //     res.status(response.status).send('Signup failed');
     //   }
-    res.redirect('https://crypto360.netlify.app/login/index.htm');
+    res.redirect('https://crypto-360.netlify.app/login/index.htm');
        //res.status(200).json({ message: 'Signup successful' })
         //console.log(users)
     }
@@ -86,7 +86,7 @@ router.post("/login",  async (req, res) => {
  // res.status(200).json({token:token,
  // _id: user._id
  //res.status(200).json("sucessfully logged")
- res.redirect('https://crypto360.netlify.app/mining/index.html');
+ res.redirect('https://crypto-360.netlify.app/mining/index.html');
        // Check if the response status is 200 (or any other successful status code)
     //     if (res.status == 200) {
     //     // Redirect the user to a certain page upon successful signup
