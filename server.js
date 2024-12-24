@@ -4,12 +4,14 @@ require('./config/db');
 const express = require("express");
 const cors = require("cors")
 const authRoute = require('./routes/auth');
+const adminRoutes = require('./routes/adminRoute');
 const app = express();
 const PORT = 3000;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 app.use("/api/auth", authRoute);
+app.use('/admin', adminRoutes);
 
 var corsOptions = {
     origin: '*',
